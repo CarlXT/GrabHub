@@ -1,6 +1,6 @@
 ﻿namespace GrabHub
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             mainPanel = new Panel();
             mainbtn = new Button();
             welcomeMessage = new Label();
@@ -43,11 +43,9 @@
             removeBtn = new Button();
             addCartLbl = new Label();
             addBtn = new Button();
-            panel1 = new Panel();
-            returnBtnAddPnl = new Button();
+            btnExit = new Button();
             mainPanel.SuspendLayout();
             actionPanel.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
@@ -115,7 +113,7 @@
             // returnBtn
             // 
             returnBtn.Image = (Image)resources.GetObject("returnBtn.Image");
-            returnBtn.Location = new Point(441, 294);
+            returnBtn.Location = new Point(431, 293);
             returnBtn.Name = "returnBtn";
             returnBtn.Size = new Size(42, 35);
             returnBtn.TabIndex = 8;
@@ -201,41 +199,40 @@
             addBtn.Size = new Size(100, 106);
             addBtn.TabIndex = 0;
             addBtn.UseVisualStyleBackColor = true;
+            addBtn.Click += addBtn_Click;
             // 
-            // panel1
+            // btnExit
             // 
-            panel1.Controls.Add(returnBtnAddPnl);
-            panel1.Location = new Point(73, 10);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(647, 343);
-            panel1.TabIndex = 2;
+            btnExit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.DarkRed;
+            btnExit.Location = new Point(635, 306);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(152, 35);
+            btnExit.TabIndex = 9;
+            btnExit.Text = "EXIT";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Visible = false;
+            btnExit.Click += btnExit_Click;
             // 
-            // returnBtnAddPnl
-            // 
-            returnBtnAddPnl.Image = (Image)resources.GetObject("returnBtnAddPnl.Image");
-            returnBtnAddPnl.Location = new Point(574, 296);
-            returnBtnAddPnl.Name = "returnBtnAddPnl";
-            returnBtnAddPnl.Size = new Size(42, 35);
-            returnBtnAddPnl.TabIndex = 9;
-            returnBtnAddPnl.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RosyBrown;
-            ClientSize = new Size(799, 374);
-            Controls.Add(panel1);
+            ClientSize = new Size(799, 384);
+            Controls.Add(btnExit);
             Controls.Add(actionPanel);
             Controls.Add(mainPanel);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Name = "Form1";
-            Text = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainMenu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Main Menu";
+            Load += MainMenu_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
             actionPanel.ResumeLayout(false);
             actionPanel.PerformLayout();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -255,7 +252,6 @@
         private Label addCartLbl;
         private Button addBtn;
         private Button returnBtn;
-        private Panel panel1;
-        private Button returnBtnAddPnl;
+        private Button btnExit;
     }
 }
